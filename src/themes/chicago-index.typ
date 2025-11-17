@@ -27,6 +27,17 @@
       text(style: "italic", [: #entry.description])
     }
 
+    // Format the reference
+    let reference = if entry.reference == none {
+      []
+    } else {
+      if entry.reference.supplement == none {
+        text(style: "italic", [ #cite(label(entry.reference.key))])
+      } else {
+        text(style: "italic", [ #cite(label(entry.reference.key), supplement: entry.reference.supplement)])
+      }
+    }
+
     block(
       below: 0.65em,
       text(
@@ -35,8 +46,8 @@
           grid(
             columns: (1fr, auto),
             gutter: 1em,
-            [#short-display#entry.label#long-display#description#entry.label],
-            [#entry.pages.join(", ")],
+            [#short-display#entry.label#long-display#description#reference#entry.label],
+            [#entry.pages.join(", ")]
           )
         },
       ),

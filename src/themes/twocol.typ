@@ -53,6 +53,17 @@
       [: #entry.description]
     }
 
+    // Format the reference
+    let reference = if entry.reference == none {
+      []
+    } else {
+      if entry.reference.supplement == none {
+        [ #cite(label(entry.reference.key))]
+      } else {
+        [ #cite(label(entry.reference.key), supplement: entry.reference.supplement)]
+      }
+    }
+
     // Render the complete entry with dotted leader line to page numbers
     text(
       size: 0.75em,
@@ -60,15 +71,11 @@
       grid(
         columns: (auto, 1fr, 1em, auto),
         align: (left, center, center, right),
-        [#short-display#entry.label#long-display#description],
-        // Term with label
-        [#repeat(h(0.25em) + "." + h(0.25em))],
-        // Dotted leader line
-        [ . ],
-        // A 1em wide dot so we definitely get some break between term and pages
-        [#entry.pages.join(", ")],
-        // Page references
-      ),
+        [#short-display#entry.label#long-display#description#reference],  // Term with label
+        [#repeat(h(0.25em) + "." + h(0.25em))], // Dotted leader line
+        [ . ], // A 1em wide dot so we definitely get some break between term and pages
+        [#entry.pages.join(", ")] // Page references
+      )
     )
   },
 )

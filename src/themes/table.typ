@@ -26,11 +26,19 @@
     )
   },
   entry: (entry, index, total) => {
-    (
-      entry.short + entry.label,
-      entry.long,
-      entry.description,
-      entry.pages.join(", "),
-    )
+    if entry.reference == none {
+      (entry.short + entry.label, entry.long, entry.description, entry.pages)
+    } else {
+      if entry.reference.supplement == none {
+        (entry.short + entry.label, entry.long, [#entry.description #cite(label(entry.reference.key))], entry.pages.join(", "))
+      } else {
+        (
+          entry.short + entry.label,
+          entry.long,
+          [#entry.description #cite(label(entry.reference.key), supplement: entry.reference.supplement)],
+          entry.pages.join(", "),
+        )
+      }
+    }
   },
 )
