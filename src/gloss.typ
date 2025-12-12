@@ -687,7 +687,7 @@
           // 1. create array of tuples with (lower [if ignore-case], entry)
           .map(e => { if ignore-case { (lower(e.short), e) } else { (e.short, e) } })
           // 2. sort the tuples (by first element then second)
-          .sorted() // NOTE: sorted() is NOT language-aware
+          .sorted(key: it => (it.first(), it.last())) // NOTE: sorted() is NOT language-aware
           // 3. strip away the tuple's first element, leaving an array of entries
           .map(t => t.last())
       } else {
