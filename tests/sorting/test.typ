@@ -24,6 +24,11 @@
     long: "test procedure specification",
     description: "A document on how to run all the test procedures"
   ),
+  cegep: (
+    short: "CÉGEP",
+    sort: "CEGEP",
+    long: "Collège d’enseignement général et professionnel",
+  ),
 )
 
 #show: init-glossary.with(myGlossary, show-term: (body) => [#emph(body)])
@@ -31,7 +36,7 @@
 #set page(numbering: "1")
 
 = Refer to our terms so they show up in the glossary
-@html, @iphone:long, @css, @css:cap:pl, @atom:pl, @tps:long
+@html, @iphone:long, @css, @css:cap:pl, @atom:pl, @tps:long, @cegep
 
 = Default sorting
 #glossary(theme: theme-compact)
