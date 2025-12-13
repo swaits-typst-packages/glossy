@@ -53,6 +53,7 @@
   // Return the normalized entry
   (
     short: entry.short,
+    sort: entry.at("sort", default: entry.short),
     plural: entry.at("plural", default: __pluralize(entry.short)),
     article: entry.at("article", default: __determine_article(entry.short)),
     long: long,
@@ -204,6 +205,7 @@
 //     - "pl": Use plural form of the term.
 //     - "both": Show "Long form (short form)".
 //     - "short": Show only the short form.
+//     - "sort": the valued used for sorting the term in the glossary
 //     - "long": Show only the long form.
 //     - "def" or "desc": Show the term's description instead of its name.
 //     - "a" or "an": Prepend an article, chosen from the entry (short or long form).
@@ -669,6 +671,7 @@
       if entry.at("group") == group {
         current_entries.push((
           short: entry.at("short"),
+          sort: entry.at("sort", default: entry.at("short")),
           long: entry.at("long"),
           description: entry.at("description"),
           label: [#metadata(key)#__entry_label(key)],
@@ -685,7 +688,7 @@
       let sorted_entries = if sort {
         current_entries
           // 1. create array of tuples with (lower [if ignore-case], entry)
-          .map(e => { if ignore-case { (lower(e.short), e) } else { (e.short, e) } })
+          .map(e => { if ignore-case { (lower(e.sort), e) } else { (e.sort, e) } })
           // 2. sort the tuples (by first element then second)
           .sorted() // NOTE: sorted() is NOT language-aware
           // 3. strip away the tuple's first element, leaving an array of entries
