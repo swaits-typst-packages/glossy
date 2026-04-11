@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.typ": "typst"
+		},
+		"[typst]": {
+			"editor.wordWrap": "on",
+			"editor.formatOnSave": true
+		},
+		"tinymist.preview.refresh": "onSave",
+		"tinymist.preview.scrollSync": "never",
+		"tinymist.preview.partialRendering": false,
+		"tinymist.preview.invertColors": "never",
+		"tinymist.preview.cursorIndicator": false
+	},
+	"extensions": {
+		"recommendations": [
+			"myriad-dreamin.tinymist",
+			"nvarner.typst-lsp"
+		]
+	}
+}

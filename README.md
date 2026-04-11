@@ -318,6 +318,10 @@ Entry fields available to themes:
 **NOTE:** If the theme does not emit `entry.label`, linking form terms to their
 glossary entry will not work.
 
+## Development and testing
+
+See: [tests/README_testing.md](tests/README_testing.md)
+
 ## License
 
 This project is licensed under the MIT License.

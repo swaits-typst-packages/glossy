@@ -1,0 +1,13 @@
+{
+  "name": "glossy-typst-tytanic",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "myriad-dreamin.tinymist",
+        "nvarner.typst-lsp"
+      ]
+    }
+  }
+}
