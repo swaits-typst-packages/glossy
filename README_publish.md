@@ -44,7 +44,9 @@ Example PR from glossy:
    git push && git push --tags
    ```
 
-6. Copy package files into a local clone of the upstream registry.
+6. Create a fork of https://github.com/typst/packages/
+
+7. Copy package files into a local clone of the upstream registry.
 
    ```bash
    cd ~/src/glossy
@@ -56,10 +58,18 @@ Example PR from glossy:
    rm -r "$dest"
    mkdir -p "$dest"
    cp -r src "$dest/"
-   cp -r justfile lib.typ LICENSE README.md typst.toml themeshots.png thumbnail.png "$dest/"
+   cp -r justfile lib.typ LICENSE README.md README_publish.md README_development.md typst.toml themeshots.png thumbnail.png "$dest/"
    ```
 
-   Then commit and open a PR from the typst/packages clone (see example PRs above).
+8. On fork of https://github.com/typst/packages/
+
+   ```bash
+   cd $TYPST_PACKAGES_REPO
+   git switch -c submit_glossy
+   git add packages/preview/glossy/$ver
+   git commit -m "glossy:$ver"
+   git push -u origin submit_glossy
+   ```
 
 ## Notes on just
 
