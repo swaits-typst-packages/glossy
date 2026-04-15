@@ -8,7 +8,7 @@
 
 = Testing
 Sample referencing of acronyms with `reference` dictionary. @refac does not use any supplement while
- @refacwsup uses a supplement
+@refacwsup uses a supplement
 
 
 #glossary(title: "Academic", theme: theme-academic)

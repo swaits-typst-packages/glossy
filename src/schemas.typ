@@ -17,8 +17,8 @@
           supplement: z.content(optional: true),
         ),
       ),
-    )
-  )
+    ),
+  ),
 )
 
 #let theme-schema = z.dictionary(

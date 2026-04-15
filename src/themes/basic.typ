@@ -60,7 +60,10 @@
       if entry.reference.supplement == none {
         [ #cite(label(entry.reference.key))]
       } else {
-        [ #cite(label(entry.reference.key), supplement: entry.reference.supplement)]
+        [ #cite(
+          label(entry.reference.key),
+          supplement: entry.reference.supplement,
+        )]
       }
     }
 
@@ -71,9 +74,9 @@
         left: 1em,
         bottom: 0.5em,
         block(
-          [#term#entry.label#long-form#description#reference #h(1em) (pp. #entry.pages.join(", "))]
-        )
-      )
+          [#term#entry.label#long-form#description#reference #h(1em) (pp. #entry.pages.join(", "))],
+        ),
+      ),
     )
   },
 )

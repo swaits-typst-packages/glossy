@@ -11,7 +11,6 @@
 #let __gloss_entry_postfix = ":entry"
 
 #let __normalize_reference(reference) = {
-
   if reference == none {
     return none
   }
@@ -34,7 +33,7 @@
 
   (
     key: reference.key,
-    supplement: reference.at("supplement", default: none)
+    supplement: reference.at("supplement", default: none),
   )
 }
 
@@ -88,7 +87,7 @@
     longarticle: entry.at("longarticle", default: __determine_article(long)),
     description: entry.at("description", default: none),
     group: entry.at("group", default: ""),
-    reference: __normalize_reference(entry.at("reference", default: none))
+    reference: __normalize_reference(entry.at("reference", default: none)),
   )
 }
 

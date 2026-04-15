@@ -34,7 +34,10 @@
       if entry.reference.supplement == none {
         text(style: "italic", [ #cite(label(entry.reference.key))])
       } else {
-        text(style: "italic", [ #cite(label(entry.reference.key), supplement: entry.reference.supplement)])
+        text(style: "italic", [ #cite(
+          label(entry.reference.key),
+          supplement: entry.reference.supplement,
+        )])
       }
     }
 
@@ -47,7 +50,7 @@
             columns: (1fr, auto),
             gutter: 1em,
             [#short-display#entry.label#long-display#description#reference#entry.label],
-            [#entry.pages.join(", ")]
+            [#entry.pages.join(", ")],
           )
         },
       ),

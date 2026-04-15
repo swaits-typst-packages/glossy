@@ -73,7 +73,10 @@
       if entry.reference.supplement == none {
         text(size: 0.65em, [ #cite(label(entry.reference.key))])
       } else {
-        text(size: 0.65em, [ #cite(label(entry.reference.key), supplement: entry.reference.supplement)])
+        text(size: 0.65em, [ #cite(
+          label(entry.reference.key),
+          supplement: entry.reference.supplement,
+        )])
       }
     }
 

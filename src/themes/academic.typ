@@ -36,7 +36,10 @@
       if entry.reference.supplement == none {
         [ #cite(label(entry.reference.key))]
       } else {
-        [ #cite(label(entry.reference.key), supplement: entry.reference.supplement)]
+        [ #cite(
+          label(entry.reference.key),
+          supplement: entry.reference.supplement,
+        )]
       }
     }
 
