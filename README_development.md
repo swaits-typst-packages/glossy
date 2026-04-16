@@ -16,7 +16,7 @@ Folders
 ## Running the tests manually
 
 ```bash
-./bin/autotest.sh
+just check
 ```
 
 ### Test environment: Devcontainer in VSCode

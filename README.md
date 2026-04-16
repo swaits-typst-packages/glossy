@@ -68,7 +68,7 @@ Use the `init-glossary` function to initialize glossary entries:
       description: "A formal document describing test steps and expected results",
       // Optional: Override automatic pluralization
       plural: "TPSes",
-      longplural: "test procedure specifications"
+      longplural: "test procedure specifications",
       reference: (
         key: "doe2025",
         supplement: "p. 42" // Supplement is optional
@@ -421,7 +421,9 @@ This project is licensed under the MIT License.
 
 ### v0.9.1
 
-- **Fix**, @swouf, [#17](https://github.com/swaits-typst-packages/glossy/pull/17), fixes [#16](https://github.com/swaits-typst-packages/glossy/issues/16)
+- **Feat**, @philxws692, [#15](https://github.com/swaits-typst-packages/glossy/pull/15), [#60](https://github.com/swaits/typst-collection/pull/60)
+
+- **Feat**, @swouf, [#17](https://github.com/swaits-typst-packages/glossy/pull/17), fixes [#16](https://github.com/swaits-typst-packages/glossy/issues/16)
 
 - **Fix**, @hmaerki, [#20](https://github.com/swaits-typst-packages/glossy/pull/20)
 
