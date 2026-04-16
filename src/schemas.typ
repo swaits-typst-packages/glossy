@@ -10,6 +10,13 @@
       longplural: z.content(optional: true),
       description: z.content(optional: true),
       group: z.content(optional: true),
+      reference: z.dictionary(
+        optional: true,
+        (
+          key: z.content(),
+          supplement: z.content(optional: true),
+        ),
+      ),
     ),
   ),
 )

@@ -53,6 +53,20 @@
       [: #entry.description]
     }
 
+    // Format the reference
+    let reference = if entry.reference == none {
+      []
+    } else {
+      if entry.reference.supplement == none {
+        [ #cite(label(entry.reference.key))]
+      } else {
+        [ #cite(
+          label(entry.reference.key),
+          supplement: entry.reference.supplement,
+        )]
+      }
+    }
+
     // Create the complete entry with hanging indent
     block(
       spacing: 0.5em,
@@ -60,7 +74,7 @@
         left: 1em,
         bottom: 0.5em,
         block(
-          [#term#entry.label#long-form#description #h(1em) (pp. #entry.pages.join(", "))],
+          [#term#entry.label#long-form#description#reference #h(1em) (pp. #entry.pages.join(", "))],
         ),
       ),
     )
