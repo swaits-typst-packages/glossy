@@ -58,7 +58,7 @@ Example PR from glossy:
    rm -r "$dest"
    mkdir -p "$dest"
    cp -r src "$dest/"
-   cp -r justfile lib.typ LICENSE README.md README_publish.md README_development.md typst.toml themeshots.png thumbnail.png "$dest/"
+   cp -r lib.typ LICENSE README.md README_publish.md README_development.md typst.toml themeshots.png thumbnail.png "$dest/"
    ```
 
 8. On fork of https://github.com/typst/packages/
