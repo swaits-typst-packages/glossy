@@ -656,6 +656,9 @@
   show ref: r => {
     let (raw_key, ..raw_modifiers) = str(r.target).split(":")
     let supplement = r.supplement // used for term display overrides
+    if type(supplement) == function {
+      supplement = supplement(r)
+    }
 
     // Determine if we need to swap the key and first modifier.
     // Conditions for swapping:
