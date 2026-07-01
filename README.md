@@ -41,7 +41,7 @@ different goals:
 ### Import the package
 
 ```typst
-#import "@preview/glossy:0.9.1": *
+#import "@preview/glossy:0.9.2": *
 ```
 
 ### Defining Glossary Terms
@@ -418,6 +418,10 @@ See: [README_publish.md](README_publish.md)
 This project is licensed under the MIT License.
 
 ## Changelog
+
+### v0.9.2
+
+- **Fix**, @eltos, [#27](https://github.com/swaits-typst-packages/glossy/pull/27)
 
 ### v0.9.1
 

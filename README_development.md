@@ -17,6 +17,7 @@ Folders
 
 ```bash
 just check
+just fmt
 ```
 
 ### Test environment: Devcontainer in VSCode
